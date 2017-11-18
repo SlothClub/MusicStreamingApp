@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".CredentialJava.SignupActivity" />
         <activity android:name=".NewsfeedJava.NewsFeedActivity" />
+        <activity android:name=".NewsfeedJava.NewsFeedIndepthCard" />
         <activity android:name=".RadioStationJava.RadioStationsActivity" />
         <activity
             android:name=".AlarmJava.AlarmListActivity"

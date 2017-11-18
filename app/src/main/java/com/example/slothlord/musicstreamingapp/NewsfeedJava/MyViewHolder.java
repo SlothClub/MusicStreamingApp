@@ -1,7 +1,13 @@
 package com.example.slothlord.musicstreamingapp.NewsfeedJava;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,16 +23,22 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     public TextView description;
     public ImageView background;
 
-    public MyViewHolder(View v) {
-        super(v);
-        title = (TextView) v.findViewById(R.id.card_title);
-        description = (TextView) v.findViewById(R.id.card_description);
-        background = (ImageView) v.findViewById(R.id.background);
+    public MyViewHolder(View view) {
+        super(view);
+
+
+        title = (TextView) view.findViewById(R.id.card_title);
+        description = (TextView) view.findViewById(R.id.card_description);
+        background = (ImageView) view.findViewById(R.id.background);
         background.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
-                System.out.print("Cover Image Pressed");
+                title.setText("MPLV");
             }
+
         });
+
+
     }
+
+
 }
