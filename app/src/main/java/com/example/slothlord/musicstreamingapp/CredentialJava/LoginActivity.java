@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.slothlord.musicstreamingapp.MediaPlayer.MediaPlayerActivity;
 import com.example.slothlord.musicstreamingapp.NewsfeedJava.NewsFeedActivity;
+import com.example.slothlord.musicstreamingapp.NewsfeedJava.NewsFeedController;
 import com.example.slothlord.musicstreamingapp.R;
 import com.example.slothlord.musicstreamingapp.RadioStationJava.RadioStationsActivity;
 
@@ -25,11 +26,14 @@ public class LoginActivity extends AppCompatActivity {
         final EditText email_input = (EditText) findViewById(R.id.email_input);
         final EditText password_input = (EditText) findViewById(R.id.password_input);
 
+        /** Testing the server response **/
+        NewsFeedController controller = new NewsFeedController(context);
+        controller.retrieveNews();
 
         Button login = (Button) findViewById(R.id.login_button);
         login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                /*
+                /** Check the input fields and make sure they are filled. Then send to the controller.
                 String email = email_input.getText().toString();
                 String password = password_input.getText().toString();
 
@@ -41,18 +45,18 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "Fill all input areas", Toast.LENGTH_SHORT).show();
                 }
-                */
-                Intent myIntent = new Intent(view.getContext(), NewsFeedActivity.class);
-                startActivityForResult(myIntent, 0);
+                8*/
             }
 
         });
 
-        Button signup_button = (Button) findViewById(R.id.signup_button);
-        signup_button.setOnClickListener(new View.OnClickListener() {
+        Button signup = (Button) findViewById(R.id.signup_button);
+        signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Intent iSignup = new Intent(context, SignupActivity.class);
+
+                /** Testing. Remove when done. **/
                 Intent iSignup = new Intent(context, RadioStationsActivity.class);
                //Intent iSignup = new Intent(context, NewsFeedActivity.class);
                 startActivity(iSignup);
