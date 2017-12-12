@@ -9,20 +9,20 @@ import com.google.gson.annotations.SerializedName;
 public class NewsArticle {
 
     @SerializedName("article_text")
-    public String description;
+    public String article_text;
 
     @SerializedName("article_image")
-    public String imagePath;
+    public String image_path;
 
-    public String getDescription() {
-        return description;
+    public String articleText() {
+        return article_text;
     }
 
     public String getImagePath() {
-        return imagePath;
+        return image_path;
     }
 
     public String toString() {
-        return "[NewsArticle: [description : " + this.description + " imagePath : " + this.imagePath + "]]";
+        return "[NewsArticle: [description : " + this.article_text + " imagePath : " + this.image_path + "]]";
     }
 }
