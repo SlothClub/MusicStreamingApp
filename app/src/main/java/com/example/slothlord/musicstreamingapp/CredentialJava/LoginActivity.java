@@ -26,10 +26,6 @@ public class LoginActivity extends AppCompatActivity {
         final EditText email_input = (EditText) findViewById(R.id.email_input);
         final EditText password_input = (EditText) findViewById(R.id.password_input);
 
-        /** Testing the server response **/
-        NewsFeedController controller = new NewsFeedController(context);
-        controller.retrieveNews();
-
         Button login = (Button) findViewById(R.id.login_button);
         login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -45,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "Fill all input areas", Toast.LENGTH_SHORT).show();
                 }
-                8*/
+                **/
             }
 
         });
@@ -57,6 +53,9 @@ public class LoginActivity extends AppCompatActivity {
                 //Intent iSignup = new Intent(context, SignupActivity.class);
 
                 /** Testing. Remove when done. **/
+                NewsFeedController controller = new NewsFeedController(context);
+                controller.retrieveNews();
+
                 Intent iSignup = new Intent(context, RadioStationsActivity.class);
                //Intent iSignup = new Intent(context, NewsFeedActivity.class);
                 startActivity(iSignup);
