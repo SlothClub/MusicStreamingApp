@@ -143,4 +143,9 @@ public class Alarm {
         date = monthName + " " + day + ", " + year;
         return date;
     }
+
+    @Override
+    public String toString() {
+        return getAlarmName() + " " + getDate() + " " + getAlarmTime();
+    }
 }
