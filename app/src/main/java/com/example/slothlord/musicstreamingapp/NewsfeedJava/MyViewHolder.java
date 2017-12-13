@@ -25,13 +25,13 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     public TextView title;
     public String description;
     public ImageView background;
+    private Bitmap image;
 
     public MyViewHolder(View v) {
         super(v);
         title = (TextView) v.findViewById(R.id.card_title);
         background = (ImageView) v.findViewById(R.id.backgroundId);
         background.buildDrawingCache();
-
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,12 +41,8 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
                 Bundle extra = new Bundle();
                 extra.putString("title", title.getText().toString());
                 extra.putString("description", description);
-//                Bitmap bitmap = BitmapFactory.decodeResource(background.getResources(), R.drawable.taylor_grammy);
-//                ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//                bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-//                byte[] b = baos.toByteArray();                    // Convert to bitmap to send over to expand
-//                extra.putByteArray("background", b);
-                expandCardView.putExtra("background", background.getDrawingCache());
+                image = background.getDrawingCache();
+                extra.putParcelable("background", image);
                 expandCardView.putExtras(extra);
                 context.startActivity(expandCardView);
             }

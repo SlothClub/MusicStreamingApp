@@ -22,6 +22,7 @@ public class NewsFeedExpandActivity extends AppCompatActivity {
     private ImageView background;
     private TextView title;
     private TextView description;
+    private Bitmap image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,20 +33,11 @@ public class NewsFeedExpandActivity extends AppCompatActivity {
         title = (TextView) findViewById(R.id.ex_title);
         description = (TextView) findViewById(R.id.ex_description);
 
+
         title.setText(getIntent().getExtras().getString("title"));
         description.setText(getIntent().getExtras().getString("description"));
-        background.setImageBitmap((Bitmap) getIntent().getExtras().getParcelable("background"));
-    }
+        image = getIntent().getExtras().getParcelable("background");
+        background.setImageBitmap(image);
 
-    public void setImage(ImageView newImage) {
-        background = newImage;
-    }
-
-    public void setTitle(String text) {
-        title.setText(text);
-    }
-
-    public void setDescription(String text) {
-        description.setText(text);
     }
 }
