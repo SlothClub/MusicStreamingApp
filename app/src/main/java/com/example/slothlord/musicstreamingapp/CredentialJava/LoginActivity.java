@@ -56,8 +56,8 @@ public class LoginActivity extends AppCompatActivity {
                 NewsFeedController controller = new NewsFeedController(context);
                 controller.retrieveNews();
 
-                Intent iSignup = new Intent(context, RadioStationsActivity.class);
-               //Intent iSignup = new Intent(context, NewsFeedActivity.class);
+//                Intent iSignup = new Intent(context, RadioStationsActivity.class);
+                Intent iSignup = new Intent(context, NewsFeedActivity.class);
                 startActivity(iSignup);
             }
         });

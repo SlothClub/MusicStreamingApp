@@ -50,9 +50,7 @@ public class NewsFeedActivity extends AppCompatActivity
 
         recyclerView = (RecyclerView) findViewById(R.id.cardView);
 
-
-
-                 cardList = new ArrayList<>();
+        cardList = new ArrayList<>();
 
         adapter = new CardAdapter(cardList);
 
@@ -89,7 +87,7 @@ public class NewsFeedActivity extends AppCompatActivity
 //                System.out.println("Authentication Call Failed");
 //            }
 //        });
-        NewsCard n = new NewsCard("The 'Despacito' Story Continues", R.drawable.taylor_grammy);
+        NewsCard n = new NewsCard("Taylor Swift", "A good description", R.drawable.taylor_grammy);
         cardList.add(n);
 
         adapter.notifyDataSetChanged();
