@@ -27,6 +27,7 @@ public class CreateAlarmActivity extends AppCompatActivity implements View.OnCli
     EditText title;
     TextView time, dateText;
     String date;
+    String titleString = "alarm";
     Intent intent;
 
     private int year, month, day, hour, minute;
@@ -75,6 +76,13 @@ public class CreateAlarmActivity extends AppCompatActivity implements View.OnCli
         title.setOnClickListener(this);
         createAlarm.setOnClickListener(this);
         intent = new Intent();
+        intent.putExtra("hour", hour);
+        intent.putExtra("min", minute);
+        intent.putExtra("month", month);
+        intent.putExtra("day", day);
+        intent.putExtra("year",year);
+        intent.putExtra("title", titleString);
+
     }
 
     @Override
