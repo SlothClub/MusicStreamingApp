@@ -1,5 +1,6 @@
 package com.example.slothlord.musicstreamingapp.AlarmJava;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.example.slothlord.musicstreamingapp.R;
+
+import java.io.FileOutputStream;
 
 
 public class AlarmListActivity extends AppCompatActivity implements AlarmListAdapter.customButtonListener {
@@ -64,6 +67,19 @@ public class AlarmListActivity extends AppCompatActivity implements AlarmListAda
                         intent.getExtras().getInt("month"), intent.getExtras().getInt("day"), intent.getExtras().getInt("year"),
                         intent.getExtras().getString("title")));
                 adapter.notifyDataSetChanged();
+
+                String filename = "Alarmfile";
+                Alarm alarm = new Alarm(intent.getExtras().getInt("hour"),intent.getExtras().getInt("min"));
+                String alarmString = alarm.toString();
+                FileOutputStream outputStream;
+
+                try {
+                    outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+                    outputStream.write(alarmString.getBytes());
+                    outputStream.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
