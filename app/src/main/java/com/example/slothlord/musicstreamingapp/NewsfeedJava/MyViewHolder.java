@@ -23,13 +23,14 @@ import java.io.ByteArrayOutputStream;
 public class MyViewHolder extends RecyclerView.ViewHolder {
 
     public TextView title;
-    public String description;
+    public TextView description;
     public ImageView background;
     private Bitmap image;
 
     public MyViewHolder(View v) {
         super(v);
         title = (TextView) v.findViewById(R.id.card_title);
+        description = (TextView) v.findViewById(R.id.card_description);
         background = (ImageView) v.findViewById(R.id.backgroundId);
         background.buildDrawingCache();
         v.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +41,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
                 Intent expandCardView = new Intent(context, NewsFeedExpandActivity.class);
                 Bundle extra = new Bundle();
                 extra.putString("title", title.getText().toString());
-                extra.putString("description", description);
+                extra.putString("description", description.getText().toString());
                 image = background.getDrawingCache();
                 extra.putParcelable("background", image);
                 expandCardView.putExtras(extra);

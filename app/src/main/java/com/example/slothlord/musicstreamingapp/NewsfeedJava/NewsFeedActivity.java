@@ -87,8 +87,12 @@ public class NewsFeedActivity extends AppCompatActivity
 //                System.out.println("Authentication Call Failed");
 //            }
 //        });
-        NewsCard n = new NewsCard("Taylor Swift", "A good description", R.drawable.taylor_grammy);
+        NewsCard n = new NewsCard("Big Announcement", "Stuff happens", R.drawable.taylor_grammy);
         cardList.add(n);
+
+        n = new NewsCard("More Stuff Happens", "Stuff happens", R.drawable.taylor_grammy);
+        cardList.add(n);
+
 
         adapter.notifyDataSetChanged();
     }
